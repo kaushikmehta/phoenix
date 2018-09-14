@@ -1,0 +1,193 @@
+<html>
+    <head>
+
+
+        <title>ethers.io</title>
+        <link rel="stylesheet" type="text/css" href="walletCSS.css">
+
+
+    </head>
+    <body>
+        <div id="templates">
+
+            <!-- Standard Wallet Interface (Navigation Controller 0) -->
+            <div class="nav-wallet">
+                <div class="info">
+                    <div class="address"><input class="populate-address" readonly="readonly" type="text" /></div>
+                    <div class="nickname populate-nickname"></div>
+                    <div class="onboard">You do not have any accounts &mdash; <span class="add-account">Click here to add one</span></div>
+                </div>
+                <span>&nbsp;</span>
+                <div class="balance"><span class="unit">&Xi;</span> <span class="populate-balance-whole">1</span>.<span class="decimal populate-balance-decimal">1</span></div>
+            </div>
+
+            <!-- Transaction Notice -->
+            <div class="nav-notice">
+                <div class="title"><span class="populate-title">[title]</span></div>
+                <div class="blurb"><span class="populate-blurb">[blurb]</span></div>
+            </div>
+
+            <!-- Upload JSON Wallet -->
+            <div class="nav-button">
+                <div class="title"><span class="populate-title">[title]</span></div>
+                <div class="blurb"><span class="populate-blurb">[blurb]</span></div>
+                <div class="button"><a class="populate-action">[action]</a></div>
+            </div>
+
+            <!-- Transaction Summary; Shown if account is locked before unlock workflow -->
+            <div class="nav-transaction-summary">
+                <div class="title"><span>Send Transaction</span></div>
+                <table>
+                    <tr>
+                        <th><span class="populate-header-address">To:</span></th>
+                        <td><span class="populate-address"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Amount:</th>
+                        <td class="nowrap"><span class="unit">&Xi;</span> <span class="populate-amount"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Data:</th>
+                        <td><span class="nowrap populate-data-length"></span></td>
+                    </tr>
+                </table>
+                <div class="button"><a>UNLOCK ACCOUNT...</a></div>
+            </div>
+
+            <!-- Transaction Confirmation -->
+            <div class="nav-transaction">
+                <div class="title"><span>Send Transaction</span></div>
+                <table>
+                    <tr>
+                        <th><span class="populate-header-address">To:</span></th>
+                        <td><span class="populate-address"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Amount:</th>
+                        <td class="nowarp"><span class="unit">&Xi; </span> <span class="populate-amount"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Gas Price:</th>
+                        <td class="nowrap"><div class="options-container"><div class="arrow">&#9658;</div><div class="options"></div></div></td>
+                    </tr>
+                    <tr>
+                        <th class="populate-header-gas-limit">Gas Limit:</th>
+                        <td class="nowrap"><span class="populate-gas-limit">calculating...</span></td>
+                    </tr>
+                    <tr>
+                        <th class="populate-header-fee">Transaction Fee:</th>
+                        <td class="nowrap"><span class="unit">&Xi; </span> <span class="populate-fee">calculating...</span></td>
+                    </tr>
+                    <tr>
+                        <th>Data:</th>
+                        <td><span class="nowrap populate-data-length"></span></td>
+                    </tr>
+                </table>
+                <div class="button"><a>SEND</a></div>
+            </div>
+
+            <!-- Transaction Summary; Shown if account is locked before unlock workflow -->
+            <div class="nav-message">
+                <div class="title"><span>Sign Message</span></div>
+                <table>
+                    <tr>
+                        <th><span class="populate-header">Message:</span></th>
+                        <td><span class="populate-message"></span></td>
+                    </tr>
+                </table>
+                <div class="button"><a class="populate-action">SIGN MESSAGE</a></div>
+            </div>
+
+            <!-- Password Entry -->
+            <div class="nav-password">
+                <div class="title"><span>Enter Password</span></div>
+                <div class="blurb"><span class="populate-blurb">&nbsp;</div>
+                <div><div class="input-container"><input placeholder="password" type="password" value="" /></div></div>
+                <div class="button"><a class="populate-action">SUBMIT</a></div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="nav-progress">
+                <div class="title"><span class="populate-title">Progress</span></div>
+                <div class="blurb"><span class="populate-blurb">&nbsp;</span></div>
+                <div><span class="progress-container"><span class="progress-bar"><span class="highlight"></span>&nbsp;</span><span class="percent populate-percent">0%</span></span></div>
+            </div>
+
+            <!-- Add Account -->
+            <div class="nav-add-account">
+                <div class="title"><span class="populate-title">Add Account</span></div>
+                <div class="button"><a data-name="create">Create New Account</a></div>
+                <div class="button"><a data-name="import">Import Existing Account</a></div>
+            </div>
+
+
+            <!-- Upload JSON Wallet -->
+            <div class="nav-upload">
+                <div class="title"><span class="populate-title">Verify Account JSON Wallet</span></div>
+                <div class="blurb"><span class="populate-blurb"></span></div>
+                <div class="button"><a>Verify</a></div>
+            </div>
+
+            <!-- Import Wallet -->
+            <div class="nav-import">
+                <div class="title"><span class="populate-title">Import Account</span></div>
+                <div class="blurb"><span class="populate-blurb">Drag-and-Drop a JSON Wallet, type a 12 word backup phrase or enter a raw private key below.</span></div>
+                <div><div class="input-container"><input type="text" placeholder="Select import method" value="" /></div></div>
+                <div class="button"><a>Import</a></div>
+            </div>
+
+            <!-- Account Item in the #account-list -->
+            <div class="account">
+                <span class=""><span class="icon lock-state locked populate-locked icon-locked"></span></span>
+                <input class="clickable nickname populate-nickname" readonly="readonly" value="foo"/>
+                <span class="action edit"><span class="icon icon-edit" title="Edit Name"></span></span>
+                <span class="action download"><a class="icon icon-download" title="Download"></a></span>
+                <span class="action remove"><span class="icon icon-remove" title="Remove"></span></span>
+            </div>
+
+            <!-- Option Item in the gas-limit .options -->
+            <div class="option"><b class="populate-name"></b>&nbsp;&nbsp&mdash;&nbsp;&nbsp;<i class="populate-duration"></i><span class="price populate-price"></span></div>
+
+        </div>
+<!-- Zen Messenger -->
+        <div id="app-container" class="fullscreen"> 
+
+         
+
+        </div>
+<!-- End of Zen Messenger -->
+        <div id="header">
+            <div id="controllers"></div>
+        </div>
+
+        <div id="logo">
+            <div id="account-list">
+                <div class="title">Accounts</div>
+                <div class="accounts"></div>
+                <div class="no-accounts">no accounts</div>
+                <div class="button add-account"><div><span class="icon icon-plus"></span>&nbsp;&nbsp;Add Account</div></div>
+            </div>
+            <span class="icon icon-logo icon-big"></span>
+        </div>
+        <div id="cancel" class="hidden"><span>&times;</span></div>
+
+        <div id="footer">
+            <div class="address-bar-container">
+                <div class="address-bar"><span>https://</span><input type="text" /><div>GO</div></div>
+            </div>
+            <span class="button"><a class="home icon icon-home" title="Home"></a></span>
+            <span class="button"><a class="wallet icon icon-wallet" title="Wallet"></a></span>
+        </div>
+
+        
+        <script type="text/javascript" src="walletethers.js"></script>
+        <script type="text/javascript" src="walletstatic.js"></script> 
+
+        
+            
+
+      <!--   <script type="text/javascript" src="ethAppV0.2.min.js"></script> 
+        <script type="text/javascript" src="primary.js"></script> 
+        --> 
+
+        
